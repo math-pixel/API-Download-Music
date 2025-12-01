@@ -149,7 +149,7 @@ class DeezerPlatform(DownloadInterface):
             album = data.get("album", {})
             
             return Track(
-                id=self.generate_track_id(str(data["id"])),
+                id=f"dz_{data.get('id', '')}",
                 title=data.get("title", "Unknown"),
                 artist=artist.get("name", "Unknown Artist"),
                 source=self.platform_name,
@@ -171,7 +171,7 @@ class DeezerPlatform(DownloadInterface):
             bpm = data.get("bpm")
             
             return Track(
-                id=self.generate_track_id(str(data["id"])),
+                id=f"dz_{data.get('id', '')}",
                 title=data.get("title", "Unknown"),
                 artist=artist.get("name", "Unknown Artist"),
                 source=self.platform_name,

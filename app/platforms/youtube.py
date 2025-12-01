@@ -153,7 +153,7 @@ class YouTubePlatform(DownloadInterface):
                 artist = uploader
             
             return Track(
-                id=self.generate_track_id(video_id),
+                id=f"yt_{video_id}",
                 title=title,
                 artist=artist,
                 source=self.platform_name,
